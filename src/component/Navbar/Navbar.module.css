@@ -234,13 +234,14 @@
     .navLinks {
         position: absolute;
         top: calc(100% + .75rem);
-        left: 0;
-        width: 100%;
-        padding: 1.25rem;
+        left: auto;
+        right: 0;
+        width: min(240px, 72vw);
+        padding: 1rem 1.1rem;
         display: none;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
+        gap: .15rem;
         background: rgba(90,24,35,.98);
         border: 1px solid rgba(255,255,255,.08);
         border-radius: 1.5rem;
