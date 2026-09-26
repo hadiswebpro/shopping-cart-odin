@@ -211,7 +211,25 @@
 }
 
 @media (max-width: 400px) {
+    .footer {
+        padding-inline: 1.1rem;
+    }
+
     .footerTop {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1rem;
+    }
+
+    .footerColumn {
+        gap: .65rem;
+    }
+
+    .footerColumn a {
+        font-size: .82rem;
+    }
+
+    .footerColumn h3 {
+        font-size: .68rem;
+        letter-spacing: .11em;
     }
 }
