@@ -519,9 +519,26 @@
     }
 
     .floatingNote,
-    .orbit,
     .scrollHint {
         display: none;
+    }
+
+    .orbit {
+        display: block;
+        width: 58%;
+        right: -18%;
+        top: 17%;
+        z-index: 2;
+        border-color: rgba(109, 31, 43, .18);
+        opacity: .8;
+    }
+
+    .orbit::after {
+        width: 6px;
+        height: 6px;
+        top: 13%;
+        left: 10%;
+        box-shadow: 0 0 0 6px rgba(109,31,43,.08);
     }
 
     .visualLabel {
