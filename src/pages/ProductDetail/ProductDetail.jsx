@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import products from "../../data/products";
 import styles from "./ProductDetail.module.css";
 
-function ProductDetail({ favorites, onToggleFavorite }) {
+function ProductDetail({ favorites, onToggleFavorite, onAddToCart }) {
     const { id } = useParams();
     const product = products.find((item) => item.id === Number(id));
 
@@ -17,6 +17,7 @@ function ProductDetail({ favorites, onToggleFavorite }) {
     const [showAdded, setShowAdded] = useState(false);
 
     function handleAddToBag() {
+        onAddToCart(product, quantity);
         setShowAdded(true);
         window.setTimeout(() => setShowAdded(false), 1800);
     }
