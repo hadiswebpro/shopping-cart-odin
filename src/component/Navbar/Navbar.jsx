@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-function Navbar({ favorites }) {
+function Navbar({ favorites, cart }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
     const closeMenu = () => setMenuOpen(false);
@@ -45,7 +45,7 @@ function Navbar({ favorites }) {
                     <Link to="/cart" className={styles.cart}>
                         🛒
                         <span>Bag</span>
-                        <span className={styles.cartCount}>0</span>
+                        <span className={styles.cartCount}>{cart.reduce((total, item) => total + item.quantity, 0)}</span>
                     </Link>
 
                     <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
