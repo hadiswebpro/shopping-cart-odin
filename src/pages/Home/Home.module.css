@@ -320,19 +320,25 @@
 }
 
 /* =========================
-   TABLET
+   TABLET / MOBILE
 ========================= */
 
 @media (max-width: 900px) {
     .hero {
-        grid-template-columns: 1fr;
-
+        min-height: 100svh;
         padding: 8rem 2rem 4rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         text-align: center;
     }
 
     .heroContent {
+        position: relative;
+        z-index: 5;
+
         max-width: 700px;
         margin: 0 auto;
     }
@@ -343,12 +349,43 @@
 
     .heroActions {
         justify-content: center;
+        align-items: center;
     }
 
+    /* Image becomes a subtle background */
+
     .heroImageWrapper {
-        min-height: 450px;
+        position: absolute;
+        inset: 0;
+
+        min-height: 0;
+
+        z-index: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        pointer-events: none;
+    }
+
+    .heroImage {
+        width: min(90vw, 650px);
+        height: min(90vw, 650px);
+
+        object-fit: cover;
+        border-radius: 2rem;
+
+        opacity: 0.32;
+    }
+
+    /* Hide bubbles on responsive */
+
+    .bubble {
+        display: none;
     }
 }
+
 
 /* =========================
    MOBILE
@@ -356,6 +393,7 @@
 
 @media (max-width: 500px) {
     .hero {
+        min-height: 100svh;
         padding: 7rem 1.25rem 3rem;
     }
 
@@ -363,8 +401,12 @@
         font-size: clamp(3rem, 15vw, 4.5rem);
     }
 
+    .description {
+        max-width: 360px;
+        margin-top: 1.5rem;
+    }
+
     .heroActions {
-        justify-content: center;
         gap: 1rem;
     }
 
@@ -378,25 +420,17 @@
         height: 40px;
     }
 
-    .heroImageWrapper {
-        min-height: 350px;
-    }
+    .heroImage {
+        width: 115vw;
+        height: 115vw;
 
-    .bubbleOne {
-        width: 160px;
-        height: 160px;
-    }
+        max-width: none;
+        max-height: none;
 
-    .bubbleTwo {
-        width: 95px;
-        height: 95px;
-    }
-
-    .bubbleThree {
-        width: 42px;
-        height: 42px;
+        opacity: 0.25;
     }
 }
+
 
 /* =========================
    REDUCED MOTION
