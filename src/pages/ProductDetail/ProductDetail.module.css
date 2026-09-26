@@ -27,3 +27,12 @@
 .notFound .backLink { margin-bottom:0; }
 @media(max-width:900px){ .page{padding:8rem 1.5rem 4rem}.product{grid-template-columns:1fr;gap:3rem}.imageFrame{max-width:650px;margin:0 auto}.details{max-width:650px;margin:0 auto}.backLink{margin-bottom:2rem} }
 @media(max-width:600px){ .page{padding:7rem 1rem 3.5rem}.imageFrame{border-radius:6rem 6rem 1rem 1rem}.details h1{font-size:clamp(3rem,15vw,4.8rem)}.description{font-size:.9rem}.notes{grid-template-columns:1fr 1fr;gap:1.5rem .8rem}.notes div:last-child{grid-column:1/-1} }
+.purchaseRow { display:flex; align-items:center; gap:.6rem; }
+.quantity { height:46px; display:flex; align-items:center; border:1px solid rgba(49,92,74,.35); background:transparent; }
+.quantity button { width:36px; height:100%; border:0; background:transparent; color:#315c4a; font-size:1.05rem; cursor:pointer; }
+.quantity button:hover { background:rgba(49,92,74,.07); }
+.quantity span { min-width:28px; text-align:center; color:#171717; font-size:.78rem; font-weight:700; }
+.purchaseRow .addButton { flex:1; min-height:46px; }
+.addedToast { display:inline-flex; margin-top:.8rem; padding:.65rem .9rem; background:#6d1f2b; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.08em; animation:toastIn .25s ease both; }
+@keyframes toastIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
+@media(max-width:600px) { .purchaseRow { gap:.5rem; } .quantity button { width:32px; } .quantity span { min-width:24px; } }
