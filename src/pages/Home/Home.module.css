@@ -1,0 +1,416 @@
+.home {
+    min-height: 100vh;
+    background: #f7f4ef;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8rem 4rem 4rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.heroContent {
+    position: relative;
+    z-index: 4;
+    max-width: 600px;
+}
+
+.eyebrow {
+    margin: 0 0 1.25rem;
+
+    color: #315c4a;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.hero h1 {
+    margin: 0;
+
+    color: #6d1f2b;
+
+    font-size: clamp(3.5rem, 6vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.hero h1 span {
+    display: block;
+    color: #171717;
+}
+
+.description {
+    max-width: 450px;
+    margin: 2rem 0;
+
+    color: #555;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* =========================
+   HERO ACTIONS
+========================= */
+
+.heroActions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* =========================
+   SHOP BUTTON
+========================= */
+
+.shopButton {
+    min-height: 52px;
+    padding: 0 1.4rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    border: 1px solid #315c4a;
+    background: #315c4a;
+    color: #fff;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.shopButton:hover {
+    background: #264a3c;
+    transform: translateY(-3px);
+}
+
+.shopButton:active {
+    transform: scale(0.96);
+}
+
+.shopButton span {
+    font-size: 1.2rem;
+
+    transition: transform 0.25s ease;
+}
+
+.shopButton:hover span {
+    transform: translateX(4px);
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.social {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.social img {
+    width: 35px;
+    height: 35px;
+    display: block;
+}
+
+.social:hover {
+    border-color: rgba(109, 31, 43, 0.08);
+    background: rgba(109, 31, 43, 0.08);
+    transform: translateY(-4px);
+}
+
+.social:active {
+    transform: scale(0.88);
+}
+
+/* =========================
+   IMAGE AREA
+========================= */
+
+.heroImageWrapper {
+    position: relative;
+
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.heroImage {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 560px);
+    aspect-ratio: 1;
+
+    object-fit: cover;
+
+    border-radius: 2rem;
+
+    /* No animation on the sneaker image */
+}
+
+/* =========================
+   BUBBLES
+========================= */
+
+.bubble {
+    position: absolute;
+    z-index: 3;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    backdrop-filter: blur(2px);
+}
+
+/* Green bubble */
+
+.bubbleOne {
+    width: 210px;
+    height: 210px;
+
+    top: 13%;
+    right: 5%;
+
+    background: rgba(49, 92, 74, 0.12);
+    border: 1px solid rgba(49, 92, 74, 0.35);
+
+    animation: bubbleOne 10s ease-in-out infinite;
+}
+
+/* Burgundy bubble */
+
+.bubbleTwo {
+    width: 120px;
+    height: 120px;
+
+    bottom: 14%;
+    left: 8%;
+
+    background: rgba(109, 31, 43, 0.1);
+    border: 1px solid rgba(109, 31, 43, 0.3);
+
+    animation: bubbleTwo 12s ease-in-out infinite;
+}
+
+/* Small bubble */
+
+.bubbleThree {
+    width: 50px;
+    height: 50px;
+
+    top: 18%;
+    left: 10%;
+
+    background: rgba(49, 92, 74, 0.08);
+    border: 1px solid rgba(49, 92, 74, 0.25);
+
+    animation: bubbleThree 9s ease-in-out infinite;
+}
+
+/* =========================
+   BUBBLE ANIMATIONS
+========================= */
+
+@keyframes bubbleOne {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-8px, 6px);
+    }
+
+    50% {
+        transform: translate(6px, 12px);
+    }
+
+    75% {
+        transform: translate(-5px, 7px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes bubbleTwo {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(7px, -5px);
+    }
+
+    50% {
+        transform: translate(-6px, -12px);
+    }
+
+    75% {
+        transform: translate(6px, -4px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes bubbleThree {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(8px, 10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 8rem 2rem 4rem;
+
+        text-align: center;
+    }
+
+    .heroContent {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .description {
+        margin-inline: auto;
+    }
+
+    .heroActions {
+        justify-content: center;
+    }
+
+    .heroImageWrapper {
+        min-height: 450px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+    .hero {
+        padding: 7rem 1.25rem 3rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 15vw, 4.5rem);
+    }
+
+    .heroActions {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .shopButton {
+        min-height: 48px;
+        padding: 0 1.1rem;
+    }
+
+    .social {
+        width: 40px;
+        height: 40px;
+    }
+
+    .heroImageWrapper {
+        min-height: 350px;
+    }
+
+    .bubbleOne {
+        width: 160px;
+        height: 160px;
+    }
+
+    .bubbleTwo {
+        width: 95px;
+        height: 95px;
+    }
+
+    .bubbleThree {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .bubbleOne,
+    .bubbleTwo,
+    .bubbleThree {
+        animation: none;
+    }
+
+    .shopButton,
+    .social {
+        transition: none;
+    }
+}
