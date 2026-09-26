@@ -33,6 +33,7 @@
 .quantity button:hover { background:rgba(49,92,74,.07); }
 .quantity span { min-width:28px; text-align:center; color:#171717; font-size:.78rem; font-weight:700; }
 .purchaseRow .addButton { flex:1; min-height:46px; }
-.addedToast { display:inline-flex; margin-top:.8rem; padding:.65rem .9rem; background:#6d1f2b; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.08em; animation:toastIn .25s ease both; }
+.details { position:relative; }
+.addedToast { display:flex; align-items:center; justify-content:center; width:100%; min-height:42px; box-sizing:border-box; margin-top:.8rem; padding:.65rem 1rem; border:1px solid rgba(109,31,43,.22); background:rgba(109,31,43,.96); color:#fff; font-family:Georgia,"Times New Roman",serif; font-size:.78rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; box-shadow:0 12px 28px rgba(23,23,23,.14); animation:toastIn .3s ease both; }
 @keyframes toastIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
 @media(max-width:600px) { .purchaseRow { gap:.5rem; } .quantity button { width:32px; } .quantity span { min-width:24px; } }
