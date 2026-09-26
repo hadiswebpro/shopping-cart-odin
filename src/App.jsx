@@ -8,6 +8,7 @@ import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
 
 import Favorites from "./pages/Favorites/Favorites";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
 
 function App() {
     const [favorites, setFavorites] = useState([]);
@@ -39,6 +40,11 @@ function App() {
                             onToggleFavorite={toggleFavorite}
                         />
                     }
+                />
+
+                <Route
+                    path="/product/:id"
+                    element={<ProductDetail favorites={favorites} onToggleFavorite={toggleFavorite} />}
                 />
 
                 <Route
