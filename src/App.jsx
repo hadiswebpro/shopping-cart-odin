@@ -12,6 +12,23 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 
 function App() {
     const [favorites, setFavorites] = useState([]);
+    const [cart, setCart] = useState([]);
+
+    function addToCart(product, quantity) {
+        setCart((currentCart) => {
+            const existingItem = currentCart.find((item) => item.product.id === product.id);
+
+            if (existingItem) {
+                return currentCart.map((item) =>
+                    item.product.id === product.id
+                        ? { ...item, quantity: item.quantity + quantity }
+                        : item
+                );
+            }
+
+            return [...currentCart, { product, quantity }];
+        });
+    }
 
     function toggleFavorite(productId) {
         setFavorites((currentFavorites) => {
@@ -27,7 +44,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Navbar favorites={favorites} />
+            <Navbar favorites={favorites} cart={cart} />
 
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -44,7 +61,7 @@ function App() {
 
                 <Route
                     path="/product/:id"
-                    element={<ProductDetail favorites={favorites} onToggleFavorite={toggleFavorite} />}
+                    element={<ProductDetail favorites={favorites} onToggleFavorite={toggleFavorite} onAddToCart={addToCart} />}
                 />
 
                 <Route
