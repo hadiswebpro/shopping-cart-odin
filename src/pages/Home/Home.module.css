@@ -408,8 +408,9 @@
 
 @media (max-width: 650px) {
     .hero {
-        min-height: 100svh;
-        padding: 7.5rem 1.1rem 3rem;
+        min-height: 70svh;
+        height: 70svh;
+        padding: 6.5rem 1.1rem 2.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -552,7 +553,9 @@
 
 @media (max-width: 400px) {
     .hero {
-        padding-top: 7rem;
+        min-height: 70svh;
+        height: 70svh;
+        padding-top: 6.5rem;
         padding-bottom: 2rem;
         gap: .9rem;
     }
