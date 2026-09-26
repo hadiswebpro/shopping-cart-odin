@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-function Navbar() {
+function Navbar({ favorites }) {
     const [menuOpen, setMenuOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
 
@@ -22,7 +22,7 @@ function Navbar() {
                         menuOpen ? styles.menuOpen : ""
                     }`}
                 >
-                    <Link to="/" className={styles.active} onClick={closeMenu}>
+                    <Link to="/" onClick={closeMenu}>
                         Home
                     </Link>
 
@@ -39,7 +39,9 @@ function Navbar() {
                     <div className={styles.searchWrapper}>
                         <button
                             className={styles.searchButton}
-                            onClick={() => setSearchOpen(!searchOpen)}
+                            onClick={() =>
+                                setSearchOpen(!searchOpen)
+                            }
                             aria-label="Toggle search"
                         >
                             🔍
@@ -56,15 +58,38 @@ function Navbar() {
                         )}
                     </div>
 
-                    <Link to="/cart" className={styles.cart}>
+                    <Link
+                        to="/favorites"
+                        className={styles.favorite}
+                        aria-label="Favorites"
+                    >
+                        <span className={styles.favoriteIcon}>
+                            ♥
+                        </span>
+
+                        {favorites.length > 0 && (
+                            <span className={styles.favoriteCount}>
+                                {favorites.length}
+                            </span>
+                        )}
+                    </Link>
+
+                    <Link
+                        to="/cart"
+                        className={styles.cart}
+                    >
                         🛒
                         <span>Cart</span>
-                        <span className={styles.cartCount}>0</span>
+                        <span className={styles.cartCount}>
+                            0
+                        </span>
                     </Link>
 
                     <button
                         className={styles.menuButton}
-                        onClick={() => setMenuOpen(!menuOpen)}
+                        onClick={() =>
+                            setMenuOpen(!menuOpen)
+                        }
                         aria-label="Toggle menu"
                     >
                         <span></span>
