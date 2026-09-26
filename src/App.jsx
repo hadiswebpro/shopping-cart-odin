@@ -9,6 +9,7 @@ import Shop from "./pages/Shop/Shop";
 
 import Favorites from "./pages/Favorites/Favorites";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import Cart from "./pages/Cart/Cart";
 
 function App() {
     const [favorites, setFavorites] = useState([]);
@@ -28,6 +29,21 @@ function App() {
 
             return [...currentCart, { product, quantity }];
         });
+    }
+
+    function updateCartQuantity(productId, quantity) {
+        if (quantity < 1) {
+            setCart((currentCart) => currentCart.filter((item) => item.product.id !== productId));
+            return;
+        }
+
+        setCart((currentCart) => currentCart.map((item) =>
+            item.product.id === productId ? { ...item, quantity } : item
+        ));
+    }
+
+    function removeFromCart(productId) {
+        setCart((currentCart) => currentCart.filter((item) => item.product.id !== productId));
     }
 
     function toggleFavorite(productId) {
