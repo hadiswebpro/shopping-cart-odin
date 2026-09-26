@@ -326,7 +326,7 @@
 @media (max-width: 900px) {
     .hero {
         min-height: 100svh;
-        padding: 8rem 2rem 4rem;
+        padding: 9rem 2rem 5rem;
 
         display: flex;
         align-items: center;
@@ -339,20 +339,35 @@
         position: relative;
         z-index: 5;
 
+        width: min(700px, 100%);
         max-width: 700px;
-        margin: 0 auto;
+        margin: 1.5rem auto 0;
+        padding: 2.5rem 2rem;
+
+        background: rgba(23, 23, 23, 0.48);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 2rem;
+        box-sizing: border-box;
+    }
+
+    .eyebrow {
+        color: #ffffff;
+    }
+
+    .hero h1,
+    .hero h1 span {
+        color: #ffffff;
     }
 
     .description {
         margin-inline: auto;
+        color: rgba(255, 255, 255, 0.9);
     }
 
     .heroActions {
         justify-content: center;
         align-items: center;
     }
-
-    /* Image becomes a subtle background */
 
     .heroImageWrapper {
         position: absolute;
@@ -376,10 +391,8 @@
         object-fit: cover;
         border-radius: 2rem;
 
-        opacity: 0.32;
+        opacity: 0.95;
     }
-
-    /* Hide bubbles on responsive */
 
     .bubble {
         display: none;
@@ -394,7 +407,13 @@
 @media (max-width: 500px) {
     .hero {
         min-height: 100svh;
-        padding: 7rem 1.25rem 3rem;
+        padding: 7.5rem 1.25rem 3rem;
+    }
+
+    .heroContent {
+        margin-top: 1rem;
+        padding: 2rem 1.25rem;
+        border-radius: 1.5rem;
     }
 
     .hero h1 {
@@ -427,7 +446,7 @@
         max-width: none;
         max-height: none;
 
-        opacity: 0.25;
+        opacity: 0.95;
     }
 }
 
