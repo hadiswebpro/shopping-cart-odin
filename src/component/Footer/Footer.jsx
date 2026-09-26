@@ -6,57 +6,36 @@ function Footer() {
         <footer className={styles.footer}>
             <div className={styles.footerTop}>
                 <div className={styles.brand}>
-                    <Link to="/" className={styles.logo}>
-                        VELT
-                    </Link>
-
+                    <Link to="/" className={styles.logo}>VELT</Link>
                     <p>
-                        Step into your style.
+                        Scent that stays.
                         <br />
-                        Move with confidence.
+                        A signature, not a statement.
                     </p>
                 </div>
 
                 <div className={styles.footerColumn}>
-                    <h3>SHOP</h3>
-
-                    <Link to="/shop">All Sneakers</Link>
-                    <Link to="/categories">Categories</Link>
-                    <Link to="/cart">Cart</Link>
+                    <h3>COLLECTION</h3>
+                    <Link to="/shop">All Fragrances</Link>
+                    <Link to="/categories">Scent Families</Link>
+                    <Link to="/cart">Bag</Link>
                 </div>
 
                 <div className={styles.footerColumn}>
-                    <h3>ABOUT</h3>
-
-                    <a href="#about">About Us</a>
+                    <h3>HOUSE</h3>
+                    <a href="#about">About VELT</a>
                     <a href="#contact">Contact</a>
                     <a href="#faq">FAQ</a>
                 </div>
 
                 <div className={styles.footerColumn}>
                     <h3>FOLLOW US</h3>
-
                     <div className={styles.socials}>
-                        <a
-                            href="#instagram"
-                            aria-label="Instagram"
-                            className={styles.social}
-                        >
-                            <img
-                                src={`${import.meta.env.BASE_URL}icons/instagram-white.svg`}
-                                alt=""
-                            />
+                        <a href="#instagram" aria-label="Instagram" className={styles.social}>
+                            <img src={import.meta.env.BASE_URL + "icons/instagram-white.svg"} alt="" />
                         </a>
-
-                        <a
-                            href="#telegram"
-                            aria-label="Telegram"
-                            className={styles.social}
-                        >
-                            <img
-                                src={`${import.meta.env.BASE_URL}icons/telegram-white.svg`}
-                                alt=""
-                            />
+                        <a href="#telegram" aria-label="Telegram" className={styles.social}>
+                            <img src={import.meta.env.BASE_URL + "icons/telegram-white.svg"} alt="" />
                         </a>
                     </div>
                 </div>
@@ -64,8 +43,7 @@ function Footer() {
 
             <div className={styles.footerBottom}>
                 <p>© 2026 VELT. All rights reserved.</p>
-
-                <p>Built with React</p>
+                <p>Crafted with React</p>
             </div>
         </footer>
     );
