@@ -49,9 +49,7 @@ function App() {
     function toggleFavorite(productId) {
         setFavorites((currentFavorites) => {
             if (currentFavorites.includes(productId)) {
-                return currentFavorites.filter(
-                    (id) => id !== productId
-                );
+                return currentFavorites.filter((id) => id !== productId);
             }
 
             return [...currentFavorites, productId];
@@ -65,29 +63,33 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
 
+                <Route path="/shop" element={<Shop favorites={favorites} onToggleFavorite={toggleFavorite} />} />
+
                 <Route
-                    path="/shop"
+                    path="/product/:id"
                     element={
-                        <Shop
+                        <ProductDetail
                             favorites={favorites}
                             onToggleFavorite={toggleFavorite}
+                            onAddToCart={addToCart}
                         />
                     }
                 />
 
                 <Route
-                    path="/product/:id"
-                    element={<ProductDetail favorites={favorites} onToggleFavorite={toggleFavorite} onAddToCart={addToCart} />}
+                    path="/cart"
+                    element={
+                        <Cart
+                            cart={cart}
+                            onUpdateQuantity={updateCartQuantity}
+                            onRemove={removeFromCart}
+                        />
+                    }
                 />
 
                 <Route
                     path="/favorites"
-                    element={
-                        <Favorites
-                            favorites={favorites}
-                            onToggleFavorite={toggleFavorite}
-                        />
-                    }
+                    element={<Favorites favorites={favorites} onToggleFavorite={toggleFavorite} />}
                 />
             </Routes>
 
