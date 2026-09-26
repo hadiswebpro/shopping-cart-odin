@@ -284,6 +284,12 @@
         height: 1.5px;
     }
 
+    .searchDropdown {
+        right: 50%;
+        transform: translateX(50%);
+        width: min(260px, 76vw);
+    }
+
     .cart span:not(.cartCount) {
         display: none;
     }
