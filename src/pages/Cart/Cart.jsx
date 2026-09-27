@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";
 
 function Cart({ cart, onUpdateQuantity, onRemove }) {
@@ -10,7 +11,7 @@ function Cart({ cart, onUpdateQuantity, onRemove }) {
                 <p className={styles.eyebrow}>YOUR VELT BAG</p>
                 <h1>Your bag is empty.</h1>
                 <p>Discover a fragrance made to leave a lasting impression.</p>
-                <a href="/shop" className={styles.shopLink}>Explore collection →</a>
+                <Link to="/shop" className={styles.shopLink}>Explore collection →</Link>
             </main>
         );
     }
