@@ -4,7 +4,7 @@ import styles from "./Home.module.css";
 
 function Home() {
     const desktopHeroImages = Array.from({ length: 5 }, (_, index) =>
-        import.meta.env.BASE_URL + `images/hero-desktop-${index + 1}.jpg`
+        import.meta.env.BASE_URL + `./public/images/hero-desktop-${index + 1}.jpg`
     );
     const [activeImage, setActiveImage] = useState(0);
 
@@ -61,7 +61,7 @@ function Home() {
                         <div className={styles.visualGlow} aria-hidden="true" />
 
                         <img
-                            src={import.meta.env.BASE_URL + "images/hero-mobile.jpg"}
+                            src={import.meta.env.BASE_URL + "./public/images/hero-mobile.jpg"}
                             alt="VELT luxury fragrance"
                             className={styles.mobileHeroImage}
                         />
