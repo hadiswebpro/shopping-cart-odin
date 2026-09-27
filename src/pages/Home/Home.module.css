@@ -810,3 +810,337 @@
         transition: none;
     }
 }
+
+
+/* SCENT FAMILIES */
+
+.families {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 7rem 5vw;
+    background: #f7f4ef;
+}
+
+.familiesHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.familiesHeader h2 {
+    margin: .7rem 0 0;
+    color: #171717;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 500;
+    line-height: .95;
+    letter-spacing: -.045em;
+}
+
+.familyLink,
+.storyLink {
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgba(109, 31, 43, .35);
+    color: #6d1f2b;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-decoration: none;
+    transition: gap .3s ease, border-color .3s ease;
+}
+
+.familyLink span,
+.storyLink span {
+    font-size: 1.05rem;
+}
+
+.familyLink:hover,
+.storyLink:hover {
+    gap: 1.1rem;
+    border-color: #6d1f2b;
+}
+
+.familyList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid rgba(23, 23, 23, .18);
+}
+
+.familyItem {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    min-height: 100px;
+    padding: 1.2rem .5rem;
+    border-bottom: 1px solid rgba(23, 23, 23, .18);
+    color: #171717;
+    text-decoration: none;
+    transition: color .3s ease, padding-left .3s ease;
+}
+
+.familyItem:nth-child(odd) {
+    border-right: 1px solid rgba(23, 23, 23, .18);
+    padding-right: 2rem;
+}
+
+.familyItem:nth-child(even) {
+    padding-left: 2rem;
+}
+
+.familyItem > span {
+    color: rgba(23, 23, 23, .4);
+    font-size: .65rem;
+    letter-spacing: .12em;
+}
+
+.familyItem strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-weight: 400;
+}
+
+.familyItem i {
+    color: #6d1f2b;
+    font-size: 1.2rem;
+    font-style: normal;
+    transition: transform .3s ease;
+}
+
+.familyItem:hover {
+    color: #6d1f2b;
+}
+
+.familyItem:hover i {
+    transform: translate(4px, -4px);
+}
+
+/* VELT STORY */
+
+.story {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 7rem 5vw;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+    align-items: center;
+    gap: clamp(3rem, 8vw, 8rem);
+    background: #315c4a;
+    color: #f7f4ef;
+}
+
+.storyImage {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    max-height: 680px;
+}
+
+.storyImage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(23,23,23,.3), transparent 45%);
+    pointer-events: none;
+}
+
+.storyImage img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.storyContent {
+    max-width: 520px;
+}
+
+.storyContent .eyebrow {
+    color: rgba(247, 244, 239, .7);
+}
+
+.storyContent h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: .9;
+    letter-spacing: -.05em;
+}
+
+.storyContent > p:not(.eyebrow) {
+    max-width: 450px;
+    margin: 2rem 0 2.5rem;
+    color: rgba(247, 244, 239, .72);
+    font-size: .98rem;
+    line-height: 1.9;
+}
+
+.storyLink {
+    color: #f7f4ef;
+    border-color: rgba(247, 244, 239, .4);
+}
+
+.storyLink:hover {
+    border-color: #f7f4ef;
+}
+
+/* FINAL CTA */
+
+.homeCta {
+    margin: 0 auto;
+    padding: 7rem 5vw 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #6d1f2b;
+    color: #f7f4ef;
+}
+
+.homeCta .eyebrow {
+    color: rgba(247, 244, 239, .7);
+}
+
+.homeCta h2 {
+    max-width: 800px;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: .92;
+    letter-spacing: -.05em;
+}
+
+.homeCta > p:not(.eyebrow) {
+    margin: 1.5rem 0 2rem;
+    color: rgba(247, 244, 239, .72);
+    font-size: .95rem;
+}
+
+.ctaButton {
+    min-height: 50px;
+    padding: 0 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #f7f4ef;
+    color: #f7f4ef;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-decoration: none;
+    transition: background-color .3s ease, color .3s ease, transform .3s ease;
+}
+
+.ctaButton:hover {
+    background: #f7f4ef;
+    color: #6d1f2b;
+    transform: translateY(-3px);
+}
+
+.ctaButton span {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+    .families,
+    .story {
+        padding-inline: 4vw;
+    }
+
+    .story {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .families {
+        padding: 4.5rem 1.1rem;
+    }
+
+    .familiesHeader {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .familiesHeader h2 {
+        font-size: clamp(2.5rem, 12vw, 3.8rem);
+    }
+
+    .familyList {
+        grid-template-columns: 1fr;
+    }
+
+    .familyItem,
+    .familyItem:nth-child(odd),
+    .familyItem:nth-child(even) {
+        grid-template-columns: 36px 1fr auto;
+        min-height: 82px;
+        padding: 1rem .2rem;
+        border-right: 0;
+    }
+
+    .familyItem strong {
+        font-size: 1.55rem;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 4.5rem 1.1rem 5rem;
+    }
+
+    .storyImage {
+        aspect-ratio: 4 / 5;
+    }
+
+    .storyContent h2 {
+        font-size: clamp(3rem, 15vw, 4.5rem);
+    }
+
+    .storyContent > p:not(.eyebrow) {
+        margin-top: 1.5rem;
+        font-size: .9rem;
+        line-height: 1.75;
+    }
+
+    .homeCta {
+        padding: 5rem 1.1rem 5.5rem;
+    }
+
+    .homeCta h2 {
+        font-size: clamp(2.8rem, 14vw, 4.2rem);
+    }
+
+    .homeCta > p:not(.eyebrow) {
+        max-width: 340px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 400px) {
+    .familyItem strong {
+        font-size: 1.35rem;
+    }
+
+    .storyContent h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .familyLink,
+    .storyLink,
+    .familyItem,
+    .familyItem i,
+    .ctaButton {
+        transition: none;
+    }
+}
