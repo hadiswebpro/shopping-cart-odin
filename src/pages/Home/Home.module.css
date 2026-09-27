@@ -692,3 +692,121 @@
         animation: none;
     }
 }
+
+
+/* FEATURED FRAGRANCES */
+
+.featured {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 7rem 5vw 8rem;
+    background: #f7f4ef;
+}
+
+.featuredHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.featuredHeader .eyebrow {
+    margin-bottom: 1rem;
+}
+
+.featuredHeader h2 {
+    margin: 0;
+    color: #171717;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.7rem, 5vw, 5rem);
+    font-weight: 500;
+    line-height: .95;
+    letter-spacing: -.045em;
+}
+
+.viewAll {
+    display: inline-flex;
+    align-items: center;
+    gap: .8rem;
+    padding-bottom: .55rem;
+    border-bottom: 1px solid rgba(109, 31, 43, .4);
+    color: #6d1f2b;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: gap .3s ease, border-color .3s ease;
+}
+
+.viewAll span {
+    font-size: 1.1rem;
+    transition: transform .3s ease;
+}
+
+.viewAll:hover {
+    gap: 1.1rem;
+    border-color: #6d1f2b;
+}
+
+.viewAll:hover span {
+    transform: translateX(3px);
+}
+
+.featuredGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2.2vw, 2rem);
+}
+
+@media (max-width: 1050px) {
+    .featured {
+        padding-inline: 4vw;
+    }
+
+    .featuredGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 2.5rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .featured {
+        padding: 4.5rem 1.1rem 5rem;
+    }
+
+    .featuredHeader {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2.25rem;
+    }
+
+    .featuredHeader h2 {
+        font-size: clamp(2.4rem, 12vw, 3.5rem);
+    }
+
+    .featuredGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.1rem .8rem;
+    }
+
+    .viewAll {
+        font-size: .62rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .featuredGrid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .viewAll,
+    .viewAll span {
+        transition: none;
+    }
+}
