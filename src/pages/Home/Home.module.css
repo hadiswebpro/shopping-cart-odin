@@ -657,10 +657,10 @@
         width: 82%;
         right: -28%;
         top: -12%;
-        z-index: 3;
+        z-index: 10;
         opacity: .9;
-        border-color: rgba(109, 31, 43, .28);
-        box-shadow: 0 0 0 1px rgba(247, 244, 239, .08);
+        border-color: rgba(127, 12, 29, 0.93);
+        box-shadow: 0 0 0 1px rgba(247, 231, 230, 0.878);
     }
 
     .orbit::after {
@@ -670,6 +670,7 @@
         left: 9%;
         background: #6d1f2b;
         box-shadow: 0 0 0 7px rgba(109, 31, 43, .12);
+        z-index: 15;
     }
 
     .heroActions {

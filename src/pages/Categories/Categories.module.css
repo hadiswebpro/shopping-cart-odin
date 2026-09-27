@@ -1,0 +1,220 @@
+.categories {
+    min-height: 100vh;
+    padding: 7rem 6vw 6rem;
+    background: #f7f4ef;
+    color: #171717;
+}
+
+/* Hero */
+
+.hero {
+    max-width: 760px;
+    margin: 0 auto 5rem;
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 1.25rem;
+    color: #6d1f2b;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+.hero h1 {
+    margin: 0;
+    color: #171717;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.intro {
+    max-width: 540px;
+    margin: 2rem auto 0;
+    color: rgba(23, 23, 23, 0.65);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Family Grid */
+
+.familyGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(23, 23, 23, 0.18);
+    border: 1px solid rgba(23, 23, 23, 0.18);
+}
+
+/* Family Card */
+
+.familyCard {
+    position: relative;
+    min-height: 280px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #f7f4ef;
+    color: #171717;
+    text-decoration: none;
+    overflow: hidden;
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease;
+}
+
+.number {
+    color: rgba(23, 23, 23, 0.45);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+}
+
+.cardContent {
+    position: relative;
+    z-index: 1;
+}
+
+.cardContent h2 {
+    margin: 0 0 0.6rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+.cardContent p {
+    margin: 0;
+    color: rgba(23, 23, 23, 0.55);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.arrow {
+    position: absolute;
+    top: 1.75rem;
+    right: 1.75rem;
+    font-size: 1.4rem;
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease;
+}
+
+/* Decorative circle */
+
+.familyCard::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -70px;
+    bottom: -80px;
+    border: 1px solid rgba(109, 31, 43, 0.18);
+    border-radius: 50%;
+    transition:
+        transform 0.5s ease,
+        border-color 0.35s ease;
+}
+
+.familyCard:hover {
+    background: #6d1f2b;
+    color: #f7f4ef;
+}
+
+.familyCard:hover .number,
+.familyCard:hover .cardContent p {
+    color: rgba(247, 244, 239, 0.65);
+}
+
+.familyCard:hover .arrow {
+    color: #f7f4ef;
+    transform: translate(4px, -4px);
+}
+
+.familyCard:hover::before {
+    border-color: rgba(247, 244, 239, 0.3);
+    transform: scale(1.25);
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+    .categories {
+        padding: 6rem 4vw 5rem;
+    }
+
+    .hero {
+        margin-bottom: 4rem;
+    }
+
+    .familyCard {
+        min-height: 240px;
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .categories {
+        padding: 5rem 1.25rem 4rem;
+    }
+
+    .hero {
+        margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 15vw, 4.5rem);
+    }
+
+    .intro {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .familyGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .familyCard {
+        min-height: 220px;
+        padding: 1.5rem;
+    }
+
+    .cardContent h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Small mobile */
+
+@media (max-width: 400px) {
+    .categories {
+        padding-inline: 1rem;
+    }
+
+    .familyCard {
+        min-height: 190px;
+    }
+
+    .cardContent h2 {
+        font-size: 2.15rem;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .familyCard,
+    .familyCard::before,
+    .arrow {
+        transition: none;
+    }
+}
+

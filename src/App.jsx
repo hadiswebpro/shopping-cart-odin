@@ -10,6 +10,7 @@ import Shop from "./pages/Shop/Shop";
 import Favorites from "./pages/Favorites/Favorites";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Cart from "./pages/Cart/Cart";
+import Categories from "./pages/Categories/Categories";
 
 function App() {
     const [favorites, setFavorites] = useState([]);
@@ -91,7 +92,12 @@ function App() {
                     path="/favorites"
                     element={<Favorites favorites={favorites} onToggleFavorite={toggleFavorite} />}
                 />
+
+                <Route path="/categories" element={<Categories />} />
+                
             </Routes>
+
+            
 
             <Footer />
         </BrowserRouter>

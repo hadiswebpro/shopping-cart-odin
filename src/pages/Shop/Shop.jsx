@@ -2,9 +2,15 @@ import { useState } from "react";
 import ProductCard from "../../component/ProductCard/ProductCard";
 import products from "../../data/products";
 import styles from "./Shop.module.css";
+import { useSearchParams } from "react-router-dom";
 
 function Shop({ favorites, onToggleFavorite }) {
-    const [activeCategory, setActiveCategory] = useState("All");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const categoryFromUrl = searchParams.get("category");
+
+    const [activeCategory, setActiveCategory] = useState(
+        categoryFromUrl || "All"
+    );
 
     const categories = ["All", ...new Set(products.map((product) => product.category))];
 
@@ -31,7 +37,15 @@ function Shop({ favorites, onToggleFavorite }) {
                             key={category}
                             type="button"
                             className={activeCategory === category ? styles.activeCategory : styles.category}
-                            onClick={() => setActiveCategory(category)}
+                            onClick={() => {
+                                setActiveCategory(category);
+
+                                if (category === "All") {
+                                    setSearchParams({});
+                                } else {
+                                    setSearchParams({ category });
+                                }
+                            }}
                         >
                             {category}
                         </button>
