@@ -684,17 +684,22 @@
     }
 
     .orbit {
-        width: 64%;
-        right: -22%;
-        top: 11%;
-        opacity: .85;
+        width: 82%;
+        right: -28%;
+        top: 6%;
+        z-index: 3;
+        opacity: .9;
+        border-color: rgba(109, 31, 43, .28);
+        box-shadow: 0 0 0 1px rgba(247, 244, 239, .08);
     }
 
     .orbit::after {
-        width: 6px;
-        height: 6px;
-        top: 11%;
+        width: 7px;
+        height: 7px;
+        top: 12%;
         left: 9%;
+        background: #6d1f2b;
+        box-shadow: 0 0 0 7px rgba(109, 31, 43, .12);
     }
 
     .heroActions {
