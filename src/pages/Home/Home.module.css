@@ -686,7 +686,7 @@
     .orbit {
         width: 82%;
         right: -28%;
-        top: 6%;
+        top: -12%;
         z-index: 3;
         opacity: .9;
         border-color: rgba(109, 31, 43, .28);
