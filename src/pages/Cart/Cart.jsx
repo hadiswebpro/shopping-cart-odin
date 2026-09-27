@@ -79,9 +79,9 @@ function Cart({ cart, onUpdateQuantity, onRemove }) {
                         <strong>${subtotal}</strong>
                     </div>
 
-                    <button type="button" className={styles.checkout}>
+                    <Link to="/checkout" className={styles.checkout}>
                         Continue to checkout <span>→</span>
-                    </button>
+                    </Link>
 
                     <p className={styles.note}>
                         Shipping and taxes calculated at checkout.
