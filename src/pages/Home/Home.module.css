@@ -591,3 +591,33 @@
         transition: none;
     }
 }
+
+.heroSlides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.heroSlides .heroImage {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: none;
+    transition: opacity 1.1s ease;
+}
+
+.heroSlides .heroImageActive {
+    opacity: 1;
+}
+
+@media (max-width: 650px) {
+    .heroSlides {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heroSlides .heroImage {
+        transition: none;
+    }
+}
