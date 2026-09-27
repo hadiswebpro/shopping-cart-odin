@@ -11,6 +11,7 @@ import Favorites from "./pages/Favorites/Favorites";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Cart from "./pages/Cart/Cart";
 import Categories from "./pages/Categories/Categories";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
     const [favorites, setFavorites] = useState([]);
@@ -94,6 +95,7 @@ function App() {
                 />
 
                 <Route path="/categories" element={<Categories />} />
+                <Route path="/checkout" element={<Checkout cart={cart} />} />
                 
             </Routes>
 
