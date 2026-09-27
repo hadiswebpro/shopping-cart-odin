@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProductCard from "../../component/ProductCard/ProductCard";
+import products from "../../data/products";
 import styles from "./Home.module.css";
 
-function Home() {
+function Home({ favorites, onToggleFavorite }) {
     const desktopHeroImages = Array.from({ length: 5 }, (_, index) =>
         import.meta.env.BASE_URL + `./public/images/hero-desktop-${index + 1}.jpg`
     );
     const [activeImage, setActiveImage] = useState(0);
+    const featuredProducts = products.slice(0, 4);
 
     useEffect(() => {
         const interval = window.setInterval(() => {
@@ -90,6 +93,31 @@ function Home() {
                 <div className={styles.scrollHint}>
                     <span>DISCOVER</span>
                     <i />
+                </div>
+            </section>
+
+            <section className={styles.featured}>
+                <div className={styles.featuredHeader}>
+                    <div>
+                        <p className={styles.eyebrow}>THE VELT EDIT</p>
+                        <h2>Featured Fragrances</h2>
+                    </div>
+
+                    <Link to="/shop" className={styles.viewAll}>
+                        VIEW COLLECTION
+                        <span>→</span>
+                    </Link>
+                </div>
+
+                <div className={styles.featuredGrid}>
+                    {featuredProducts.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                            isFavorite={favorites.includes(product.id)}
+                            onToggleFavorite={onToggleFavorite}
+                        />
+                    ))}
                 </div>
             </section>
         </main>
