@@ -62,7 +62,7 @@ function App() {
             <Navbar favorites={favorites} cart={cart} />
 
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home favorites={favorites} onToggleFavorite={toggleFavorite} />} />
 
                 <Route path="/shop" element={<Shop favorites={favorites} onToggleFavorite={toggleFavorite} />} />
 
