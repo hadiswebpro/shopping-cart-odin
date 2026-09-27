@@ -120,6 +120,68 @@ function Home({ favorites, onToggleFavorite }) {
                     ))}
                 </div>
             </section>
+
+            <section className={styles.families}>
+                <div className={styles.familiesHeader}>
+                    <div>
+                        <p className={styles.eyebrow}>THE WORLD OF VELT</p>
+                        <h2>Scent Families</h2>
+                    </div>
+
+                    <Link to="/categories" className={styles.familyLink}>
+                        EXPLORE FAMILIES
+                        <span>↗</span>
+                    </Link>
+                </div>
+
+                <div className={styles.familyList}>
+                    {[...new Set(products.map((product) => product.category))].map((category, index) => (
+                        <Link
+                            key={category}
+                            to={`/shop?category=${encodeURIComponent(category)}`}
+                            className={styles.familyItem}
+                        >
+                            <span>{String(index + 1).padStart(2, "0")}</span>
+                            <strong>{category}</strong>
+                            <i>↗</i>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+
+            <section className={styles.story}>
+                <div className={styles.storyImage}>
+                    <img
+                        src={import.meta.env.BASE_URL + "images/hero-desktop-3.jpg"}
+                        alt="VELT fragrance editorial"
+                    />
+                </div>
+
+                <div className={styles.storyContent}>
+                    <p className={styles.eyebrow}>THE VELT STORY</p>
+                    <h2>Scent that stays.</h2>
+                    <p>
+                        VELT is built around the idea that fragrance is more
+                        than a finishing touch. Each composition is designed
+                        to become part of a memory — something felt long
+                        after the moment has passed.
+                    </p>
+                    <Link to="/shop" className={styles.storyLink}>
+                        DISCOVER THE COLLECTION
+                        <span>→</span>
+                    </Link>
+                </div>
+            </section>
+
+            <section className={styles.homeCta}>
+                <p className={styles.eyebrow}>FIND YOUR SIGNATURE</p>
+                <h2>Find a scent that feels like you.</h2>
+                <p>Explore the VELT collection and discover your next signature.</p>
+                <Link to="/shop" className={styles.ctaButton}>
+                    EXPLORE COLLECTION
+                    <span>→</span>
+                </Link>
+            </section>
         </main>
     );
 }
