@@ -595,6 +595,10 @@
         display: none;
     }
 
+    .heroSlides {
+        display: none;
+    }
+
     .mobileHeroImage {
         position: absolute;
         inset: 0;
