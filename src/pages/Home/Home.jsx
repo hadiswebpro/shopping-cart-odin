@@ -60,12 +60,13 @@ function Home() {
                     <div className={styles.visualFrame}>
                         <div className={styles.visualGlow} aria-hidden="true" />
 
-                        <picture>
-                            <source
-                                media="(max-width: 650px)"
-                                srcSet={import.meta.env.BASE_URL + "images/hero-mobile.jpg"}
-                            />
-                            <div className={styles.heroSlides} aria-hidden="true">
+                        <img
+                            src={import.meta.env.BASE_URL + "images/hero-mobile.jpg"}
+                            alt="VELT luxury fragrance"
+                            className={styles.mobileHeroImage}
+                        />
+
+                        <div className={styles.heroSlides} aria-hidden="true">
                                 {desktopHeroImages.map((image, index) => (
                                     <img
                                         key={image}
@@ -74,8 +75,7 @@ function Home() {
                                         className={styles.heroImage + (index === activeImage ? " " + styles.heroImageActive : "")}
                                     />
                                 ))}
-                            </div>
-                        </picture>
+                        </div>
 
                         <div className={styles.visualLabel}>
                             <span>VELT</span>
